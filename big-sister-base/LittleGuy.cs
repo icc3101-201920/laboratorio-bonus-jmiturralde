@@ -91,7 +91,7 @@ namespace big_sister_base
         {
             Cart.Products.Add(product);
             OnAdded();
-            Thread.Sleep(2000);
+            Thread.Sleep(3000);
         }
 
         protected virtual void OnAdded()
