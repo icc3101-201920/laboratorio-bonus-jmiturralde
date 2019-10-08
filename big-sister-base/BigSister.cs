@@ -17,14 +17,14 @@ namespace big_sister_base
                 {
                     if (var.Stock > 0)
                     {
+
                         Console.WriteLine("Product confirmed by Big Sister");
                         var.Stock -= 1;
                     }
                     else
                     {
                         Console.WriteLine("Product decline by Big Sister");
-                        Console.WriteLine(var.Name);
-                        Console.WriteLine(var.Stock);
+                        e.RequestCart.RemoveAt(e.RequestCart.Count - 1);
                     }
                 }
                 else
