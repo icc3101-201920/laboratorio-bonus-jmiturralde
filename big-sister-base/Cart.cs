@@ -11,6 +11,7 @@ namespace big_sister_base
 
         public List<Product> Products { get => products; }
 
+
         public Cart()
         {
             this.products = new List<Product>();
