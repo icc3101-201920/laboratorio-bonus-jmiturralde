@@ -7,12 +7,17 @@ namespace big_sister_base
     {
         static void Main(string[] args)
         {
+
             LittleGuy littleGuy = new LittleGuy();
+            BigSister bigSister = new BigSister();
+
+            littleGuy.Added += bigSister.OnAdded;
+
             Market market = new Market();
             bool continueCycle = true;
             while (continueCycle)
             {
-                Console.Clear();
+                //Console.Clear();
                 Console.WriteLine("¿Que quieres hacer?\n");
                 Console.WriteLine("\t1. Ver Receta");
                 Console.WriteLine("\t2. Comprar");

@@ -13,6 +13,9 @@ namespace big_sister_base
         private Cart cart;
         private List<Product> shopList = new List<Product>();
 
+        public delegate void AddEventHandler(object source, RequestEventArgs e);
+        public event AddEventHandler Added;
+
         public LittleGuy()
         {
             if (!LoadData())
@@ -87,6 +90,16 @@ namespace big_sister_base
         public void AddProduct(Product product)
         {
             Cart.Products.Add(product);
+            OnAdded();
+            Thread.Sleep(2000);
+        }
+
+        protected virtual void OnAdded()
+        {
+            if(Added != null)
+            {
+                Added(this, new RequestEventArgs() { RequestShopList = shopList }) ;
+            }
         }
 
         public void RemoveProduct(Product product)
