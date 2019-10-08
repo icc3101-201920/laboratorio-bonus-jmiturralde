@@ -9,7 +9,6 @@ namespace big_sister_base
         public void OnAdded (object source, RequestEventArgs e)
         {
             Console.WriteLine("Product Added");
-            
         }
     }
 }

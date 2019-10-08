@@ -98,7 +98,7 @@ namespace big_sister_base
         {
             if(Added != null)
             {
-                Added(this, new RequestEventArgs() { RequestShopList = shopList }) ;
+                Added(this, new RequestEventArgs() { RequestShopList = shopList, RequestCart = Cart.Products }) ;
             }
         }
 
